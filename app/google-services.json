@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1085792475244",
+    "project_id": "calorietracker-uas",
+    "storage_bucket": "calorietracker-uas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085792475244:android:e64233f2c4fd90388d2049",
+        "android_client_info": {
+          "package_name": "com.example.calorietracker_uas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085792475244-ohtrqv5gdrr30qg3g9okilnrtrgnlqfh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYRiD6UUVuSuLeyzV9R701Hd60Ley-HC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085792475244-ohtrqv5gdrr30qg3g9okilnrtrgnlqfh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

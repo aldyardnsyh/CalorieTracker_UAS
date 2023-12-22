@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.main.profile.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:background="@drawable/ic_circle_24"
+                    android:backgroundTint="@color/primaryLightColor"
+                    android:rotationX="50"
+                    app:layout_constraintBottom_toTopOf="@id/layoutProfile"
+                    android:contentDescription="@string/background" />
+
+                <ImageView
+                    android:id="@+id/imageLogout"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_margin="12dp"
+                    android:src="@drawable/ic_baseline_logout_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/secondaryColor"
+                    android:contentDescription="@string/exit" />
+
+
+                <ImageView
+                    android:id="@+id/circle"
+                    android:layout_width="144dp"
+                    android:layout_height="144dp"
+                    android:layout_marginTop="24sp"
+                    android:src="@drawable/circle"
+                    app:layout_constraintBottom_toTopOf="@id/profileName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnEditProfile"
+                    android:contentDescription="@string/profilepicbackground" />
+
+                <ImageView
+                    android:id="@+id/profilePic"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:src="@drawable/ic_person_24"
+                    app:layout_constraintBottom_toBottomOf="@id/circle"
+                    app:layout_constraintEnd_toEndOf="@id/circle"
+                    app:layout_constraintStart_toStartOf="@id/circle"
+                    app:layout_constraintTop_toTopOf="@id/circle"
+                    app:tint="@color/gray"
+                    android:contentDescription="@string/profilepic" />
+
+                <TextView
+                    android:id="@+id/profileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/magra"
+                    android:text=""
+                    android:textSize="36sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/circle" />
+
+                <TextView
+                    android:id="@+id/height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/magra"
+                    android:text="@string/height"
+                    android:textColor="@color/gray"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@id/profileHeight"
+                    app:layout_constraintEnd_toStartOf="@id/weight"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profileName" />
+
+                <TextView
+                    android:id="@+id/profileHeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/bahiana"
+                    android:text=""
+                    android:textColor="@color/gray"
+                    android:textSize="48sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/height" />
+
+                <TextView
+                    android:id="@+id/weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/magra"
+                    android:text="@string/weight"
+                    android:textColor="@color/gray"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@id/profileWeight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/height"
+                    app:layout_constraintTop_toBottomOf="@id/profileName" />
+
+                <TextView
+                    android:id="@+id/profileWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="110dp"
+                    android:fontFamily="@font/bahiana"
+                    android:text=""
+                    android:textColor="@color/gray"
+                    android:textSize="48sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weight" />
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/circularProgressBar"
+                    android:layout_width="144dp"
+                    android:layout_height="144dp"
+                    android:layout_marginTop="20dp"
+                    app:cpb_background_progressbar_color="@color/secondaryTextColor"
+                    app:cpb_background_progressbar_width="5dp"
+                    app:cpb_progress_direction="to_right"
+                    app:cpb_progressbar_color="@color/secondaryColor"
+                    app:cpb_progressbar_width="10dp"
+                    app:cpb_round_border="false"
+                    app:layout_constraintBottom_toTopOf="@id/txtCalorieGoal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profileHeight" />
+
+
+                <TextView
+                    android:id="@+id/profileCalorieProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bahiana"
+                    android:rotation="-45"
+                    android:text=""
+                    android:textColor="@color/gray"
+                    android:textSize="36sp"
+                    app:layout_constraintBottom_toBottomOf="@id/circularProgressBar"
+                    app:layout_constraintEnd_toEndOf="@id/circularProgressBar"
+                    app:layout_constraintHorizontal_bias="0.7"
+                    app:layout_constraintStart_toStartOf="@id/circularProgressBar"
+                    app:layout_constraintTop_toTopOf="@id/circularProgressBar"
+                    app:layout_constraintVertical_bias="0.7" />
+
+                <TextView
+                    android:id="@+id/txtSlash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bahiana"
+                    android:rotation="34"
+                    android:text="@string/slash"
+                    android:textColor="@color/gray"
+                    android:textSize="88sp"
+                    app:layout_constraintBottom_toTopOf="@+id/profileCalorieProgress"
+                    app:layout_constraintEnd_toEndOf="@id/circularProgressBar"
+                    app:layout_constraintStart_toStartOf="@id/circularProgressBar"
+                    app:layout_constraintTop_toBottomOf="@+id/profileCurrentCalorie" />
+
+                <TextView
+                    android:id="@+id/profileCurrentCalorie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/bahiana"
+                    android:rotation="-45"
+                    android:text="@string/_0"
+                    android:textColor="@color/gray"
+                    android:textSize="30sp"
+                    app:layout_constraintBottom_toBottomOf="@id/circularProgressBar"
+                    app:layout_constraintEnd_toEndOf="@id/circularProgressBar"
+                    app:layout_constraintHorizontal_bias="0.35"
+                    app:layout_constraintStart_toStartOf="@id/circularProgressBar"
+                    app:layout_constraintTop_toTopOf="@id/circularProgressBar"
+                    app:layout_constraintVertical_bias="0.35" />
+
+                <TextView
+                    android:id="@+id/txtCalorieGoal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/magra"
+                    android:text="@string/calorie_goal"
+                    android:textColor="@color/secondaryDarkColor"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/circularProgressBar" />
+
+                <Button
+                    android:id="@+id/btnEditProfile"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/magra"
+                    android:text="@string/edit_profile"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_edit_24"
+                    app:layout_constraintBottom_toTopOf="@id/circle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
